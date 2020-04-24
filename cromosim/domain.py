@@ -488,7 +488,7 @@ class Domain():
         # the destination of the people)
         dest_mask = sp.zeros_like(self.image_red)
         for ic,rgb in enumerate(dest.colors):
-            dest_mask = (self.image_red == rgb[0]) \
+            dest_mask += (self.image_red == rgb[0]) \
                        *(self.image_green == rgb[1]) \
                        *(self.image_blue == rgb[2])
         mask_id = sp.where( (dest_mask>=1) )
